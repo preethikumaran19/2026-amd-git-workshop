@@ -14,13 +14,14 @@ def decrypt(encrypted_message:str) -> str:
 
 def get_relative_path(my_path:str):
     current_dir = os.path.dirname(__file__)
-    return os.path.join(current_dir, my_path, f"{my_key}.txt")
+    return os.path.join(my_path, f"{my_key}.txt")
 
 
 def main():
-    in_path = get_relative_path("../encrypted_data")
-    out_path = get_relative_path("../workshop_data")
-
+    in_path = get_relative_path("encrypted_data")
+    print(in_path)
+    out_path = get_relative_path("workshop_data")
+    print(out_path)
     encrypted_file = open(in_path, "r")
 
     with open(out_path, "w") as decrypted_file:
